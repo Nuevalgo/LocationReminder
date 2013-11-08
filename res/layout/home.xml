@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+<RelativeLayout
+        android:id="@+id/linearlayoutfirst"
+        android:layout_width="fill_parent"
+        android:layout_height="52dp"
+        android:background="#336699"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/appicon"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center_vertical"          
+            android:layout_marginLeft="10dp"     
+            android:background="@drawable/ic_launcher" >
+        </Button>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/appicon"
+            android:gravity="center"
+            android:text="Location Reminder"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            >
+        </TextView>     
+
+    </RelativeLayout>
+     
+      
+       <RelativeLayout
+                 android:layout_width="fill_parent"
+                 android:layout_height="fill_parent"
+                 android:layout_marginLeft="7dp"
+                 android:id="@+id/dummy"
+                 android:layout_marginRight="7dp"
+                 android:layout_marginTop="7dp"
+                 android:background="#ffffff"
+                 android:layout_below="@+id/linearlayoutfirst"
+                 android:layout_above="@+id/alarmnote"              
+                     >      
+             
+                 
+              
+ <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/locationlayout"               
+                android:layout_margin="7dp"
+                android:visibility="visible"                         
+                android:orientation="vertical" >               
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="35dp"
+                    android:layout_margin="4dp"                                   
+                    android:text="Select your location"
+                     android:background="@drawable/bg_textview"
+                    android:drawableRight="@drawable/searchicon"
+                    android:id="@+id/heading"
+                    android:textColor="#555555"
+                     android:paddingLeft="5dp"
+                     android:imeOptions="actionDone"
+                     android:singleLine="true"
+                    android:textSize="13dp" />
+
+                <RelativeLayout
+                android:id="@+id/relativeLayoutnew"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/seeklayout"
+                android:layout_below="@+id/heading"
+                android:layout_margin="3dp"                        
+                 android:background="#cccccc"                  
+                android:visibility="visible" >
+
+                <fragment
+                    android:id="@+id/map"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                     android:layout_margin="1dp"
+                    class="com.google.android.gms.maps.SupportMapFragment" />
+
+                <View
+                    android:id="@+id/imageView123"
+                    android:layout_width="match_parent"
+                     android:layout_margin="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent" />
+            </RelativeLayout>
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:id="@+id/seeklayout"
+                    android:layout_above="@+id/seekBar1"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="7dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"                       
+                        android:text="Within"
+                        android:textColor="#555555"
+                        android:textSize="11dp" />
+                   
+
+                    <TextView
+                        android:id="@+id/radius"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="10dp"                 
+                        android:text="0 Kms"
+                        android:textColor="#555555"
+                        android:textSize="11dp" />
+                </RelativeLayout>
+
+                <SeekBar
+                    android:id="@+id/seekBar1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"                    
+                    android:background="@android:color/transparent"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp" 
+                    android:paddingBottom="5dp"                  
+                    android:progress="1"
+                    android:progressDrawable="@drawable/seekbar_progress" />
+
+               
+       </RelativeLayout>
+       
+</RelativeLayout>
+
+         <EditText 
+             android:layout_width="fill_parent"
+				android:layout_height="50dp"
+				android:layout_marginRight="10dp"
+				android:layout_marginLeft="10dp"
+				android:layout_marginTop="10dp"
+				android:id="@+id/alarmnote"
+				android:gravity="top"
+				android:background="@drawable/bg_textview"   
+				android:layout_above="@+id/find1"    
+             
+             />      
+   
+       <RelativeLayout 
+            android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+             android:layout_marginBottom="7dp"
+              android:layout_alignParentBottom="true"
+               android:id="@+id/find1" 
+             
+           
+           >
+        <Button
+            android:id="@+id/find"            
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"           
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"    
+            android:layout_centerHorizontal="true"  
+            android:layout_centerVertical="true"  
+            android:onClick="@string/save"                        
+            android:text="SAVE"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:textStyle="normal" />
+  </RelativeLayout>
+
+</RelativeLayout>
